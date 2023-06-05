@@ -1,5 +1,5 @@
 # Pepe_coin_analisis
-![Screenshot](Pepe-Coin-Analysis-1024x683.png=250x250)
+![Screenshot](Pepe-Coin-Analysis-1024x683.png)
 
 
 ## Iniciativa

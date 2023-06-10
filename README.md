@@ -25,4 +25,25 @@ En la primera fase de un smart contract se ejecuta el constructor
     }
 ```
 
-La primera parte que se ejecuta de un smart contract es el constructor, en este caso el constructor manda los tokens a su propia wallet
+La primera parte que se ejecuta de un smart contract es el constructor, en este caso el constructor manda los tokens a su propia wallet.
+
+## Distribución
+En esta segunda fase, de distribucón de tokens, ni airdrop , simplemente el propietario ha enviado los tokens en una liquidity pool, en esta liquidity pool se envia un poco más del 90% de los tokens, más 2 ether para conformar la liquidity pool
+Visualizar en: https://etherscan.io/token/0x6982508145454Ce325dDbE47a25d4ec3d2311933
+
+## Transfer
+ En la función transfer  podemos ver que se requiere que la cartera no esté blacklisted con lo que significa que el control del equipo de desarrollo de pepecoin tiene potestad para poder editar que cartera puede comprar y cuál no.
+ ```solidity 
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 amount
+    ) override internal virtual {
+        require(!blacklists[to] && !blacklists[from], "Blacklisted");
+
+        if (uniswapV2Pair == address(0)) {
+            require(from == owner() || to == owner(), "trading is not started");
+            return;
+        }
+  ```
+  

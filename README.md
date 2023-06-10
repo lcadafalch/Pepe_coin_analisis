@@ -46,4 +46,10 @@ Visualizar en: https://etherscan.io/token/0x6982508145454Ce325dDbE47a25d4ec3d231
             return;
         }
   ```
+  Pero en su momento el equipo de desarrolladores ejecutó la función para dejar de ser propietarios de manera que dejaron de controlar el smartcontract , y ya era totalmente descentralizado
+ ```solidity
+     function renounceOwnership() public virtual onlyOwner {
+        _transferOwnership(address(0));
+    }
+```
   

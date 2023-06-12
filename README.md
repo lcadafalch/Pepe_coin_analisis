@@ -52,4 +52,32 @@ Visualizar en: https://etherscan.io/token/0x6982508145454Ce325dDbE47a25d4ec3d231
         _transferOwnership(address(0));
     }
 ```
-  
+## Mínimos y máximos de holding 
+En este caso esta función está fuera de funcionamiento porque el propietario del token resignó al ownership, pero era para controlar mínimos y máximos que podía controlar cada usuario por cartera, posiblemente un sistema de 
+
+
+```solidity 
+    function setRule(bool _limited, address _uniswapV2Pair, uint256 _maxHoldingAmount, uint256 _minHoldingAmount) external onlyOwner {
+        limited = _limited;
+        uniswapV2Pair = _uniswapV2Pair;
+        maxHoldingAmount = _maxHoldingAmount;
+        minHoldingAmount = _minHoldingAmount;
+    }
+
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 amount
+    ) override internal virtual {
+        require(!blacklists[to] && !blacklists[from], "Blacklisted");
+
+        if (uniswapV2Pair == address(0)) {
+            require(from == owner() || to == owner(), "trading is not started");
+            return;
+        }
+
+        if (limited && from == uniswapV2Pair) {
+            require(super.balanceOf(to) + amount <= maxHoldingAmount && super.balanceOf(to) + amount >= minHoldingAmount, "Forbid");
+        }
+    }
+  ```

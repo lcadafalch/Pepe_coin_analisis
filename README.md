@@ -81,3 +81,16 @@ En este caso esta función está fuera de funcionamiento porque el propietario d
         }
     }
   ```
+## Descripción detallada del contrato
+
+La primera parte hay toda la parte de importaciones, la licencia, el uso del framework de hardhat y openzeppelin 
+```solidity
+
+// Sources flattened with hardhat v2.7.0 https://hardhat.org
+// File @openzeppelin/contracts/utils/Context.sol@v4.4.0
+// SPDX-License-Identifier: MIT
+// OpenZeppelin Contracts v4.4.0 (utils/Context.sol)
+```
+Sigue con el uso de la función context que ###Context.sol es un contrato inteligente de la biblioteca de contratos OpenZeppelin. Proporciona una implementación básica de un contexto de ejecución para otros contratos. El contexto de ejecución se refiere a la información disponible durante la ejecución de un contrato, como la dirección del remitente o la identificación del contrato.
+
+La finalidad principal de Context.sol es proporcionar una forma estándar de acceder a la dirección del remitente (la cuenta o contrato que inició la transacción) y otros valores de contexto importantes. Esto es útil para muchos contratos, ya que a menudo necesitan saber quién es el remitente para tomar decisiones o realizar ciertas operaciones.

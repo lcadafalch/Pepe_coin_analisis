@@ -53,7 +53,7 @@ Visualizar en: https://etherscan.io/token/0x6982508145454Ce325dDbE47a25d4ec3d231
     }
 ```
 ## Mínimos y máximos de holding 
-En este caso esta función está fuera de funcionamiento porque el propietario del token resignó al ownership, pero era para controlar mínimos y máximos que podía controlar cada usuario por cartera, posiblemente un sistema de 
+En este caso esta función está fuera de funcionamiento porque el propietario del token resignó al ownership, pero era para controlar mínimos y máximos que podía controlar cada usuario por cartera, posiblemente un sistema de control de ballenas.
 
 
 ```solidity 

@@ -95,3 +95,4 @@ Sigue con el uso de la función context que **Context.sol** es un contrato intel
 
 La finalidad principal de Context.sol es proporcionar una forma estándar de acceder a la dirección del remitente (la cuenta o contrato que inició la transacción) y otros valores de contexto importantes. Esto es útil para muchos contratos, ya que a menudo necesitan saber quién es el remitente para tomar decisiones o realizar ciertas operaciones.
 
+

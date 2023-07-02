@@ -96,3 +96,26 @@ Sigue con el uso de la función context que **Context.sol** es un contrato intel
 La finalidad principal de Context.sol es proporcionar una forma estándar de acceder a la dirección del remitente (la cuenta o contrato que inició la transacción) y otros valores de contexto importantes. Esto es útil para muchos contratos, ya que a menudo necesitan saber quién es el remitente para tomar decisiones o realizar ciertas operaciones.
 
 
+### Primer contrato referente a la importación de Context.sol
+```solidity
+abstract contract Context {
+    function _msgSender() internal view virtual returns (address) {
+        return msg.sender;
+    }
+
+    function _msgData() internal view virtual returns (bytes calldata) {
+        return msg.data;
+    }
+}
+``` solidity
+
+El propósito de este contrato "Context" es proporcionar información básica de contexto a los contratos que heredan de él. Define dos funciones internas de vista: "_msgSender()" y "_msgData()".
+
+La función "_msgSender()" devuelve la dirección de la cuenta que inició la transacción actual (es decir, el remitente del mensaje). "msg.sender" es una variable global en Solidity que representa el remitente del mensaje o transacción actual.
+
+La función "_msgData()" devuelve los datos crudos de la llamada a la función actual como una matriz de bytes. "msg.data" es otra variable global que contiene los datos completos de la llamada a la función actual.
+
+Ambas funciones están marcadas como "internal", lo que significa que solo se pueden llamar desde dentro del contrato en sí y sus contratos derivados. También están marcadas como "virtual", lo que indica que pueden ser sobrescritas por los contratos que heredan de este contrato "Context".
+
+
+

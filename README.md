@@ -96,7 +96,7 @@ Sigue con el uso de la función context que **Context.sol** es un contrato intel
 La finalidad principal de Context.sol es proporcionar una forma estándar de acceder a la dirección del remitente (la cuenta o contrato que inició la transacción) y otros valores de contexto importantes. Esto es útil para muchos contratos, ya que a menudo necesitan saber quién es el remitente para tomar decisiones o realizar ciertas operaciones.
 
 
-### Primer contrato referente a la importación de Context.sol
+### Primer contrato referente a la importación de Context.sol (openzeppelin)
 ```solidity
 abstract contract Context {
     function _msgSender() internal view virtual returns (address) {
@@ -116,6 +116,27 @@ La función "_msgSender()" devuelve la dirección de la cuenta que inició la tr
 La función "_msgData()" devuelve los datos crudos de la llamada a la función actual como una matriz de bytes. "msg.data" es otra variable global que contiene los datos completos de la llamada a la función actual.
 
 Ambas funciones están marcadas como "internal", lo que significa que solo se pueden llamar desde dentro del contrato en sí y sus contratos derivados. También están marcadas como "virtual", lo que indica que pueden ser sobrescritas por los contratos que heredan de este contrato "Context".
+
+### Segundo contrato referente al Ownership (openzeppelin)
+Este contrato solo
+```solidity
+abstract contract Ownable is Context {
+    address private _owner;
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    constructor() {
+        _transferOwnership(_msgSender());
+    }
+    function owner() public view virtual returns (address) {
+        return _owner;
+    }
+    modifier onlyOwner() {
+        require(owner() == _msgSender(), "Ownable: caller is not the owner");
+        _;
+    }
+    function renounceOwnership() public virtual onlyOwner {
+        _transferOwnership(address(0));
+    }
+```
 
 
 

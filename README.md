@@ -107,7 +107,7 @@ abstract contract Context {
         return msg.data;
     }
 }
-``` solidity
+```
 
 El propósito de este contrato "Context" es proporcionar información básica de contexto a los contratos que heredan de él. Define dos funciones internas de vista: "_msgSender()" y "_msgData()".
 

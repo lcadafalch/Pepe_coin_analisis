@@ -118,7 +118,7 @@ La función "_msgData()" devuelve los datos crudos de la llamada a la función a
 Ambas funciones están marcadas como "internal", lo que significa que solo se pueden llamar desde dentro del contrato en sí y sus contratos derivados. También están marcadas como "virtual", lo que indica que pueden ser sobrescritas por los contratos que heredan de este contrato "Context".
 
 ### Segundo contrato referente al Ownership (openzeppelin)
-Este contrato solo
+Este contrato solo trata temas de manejo y visualización del ownership a través del estándar de openzeppelin
 ```solidity
 abstract contract Ownable is Context {
     address private _owner;
@@ -136,7 +136,26 @@ abstract contract Ownable is Context {
     function renounceOwnership() public virtual onlyOwner {
         _transferOwnership(address(0));
     }
+
 ```
+## Tercer contrato / IERC20 estándar de Ethereum ( openzeppelin)
 
+El tercer contrato parte otra vez desde Openzeppelin, este caso es la interficie para crear , modificar, y usar un token en la red de ethereum, cómo son las anteriores, parte de el estándar creado por Openzeppelin.
 
+Básicamente hay temas de **transferencia**, cantidad **total** y **prestación** y eventos para la visualización de las ** Transferencias **
+*/
+interface IERC20 {
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(
+        address sender,
+        address recipient,
+        uint256 amount
+    ) external returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+}
 

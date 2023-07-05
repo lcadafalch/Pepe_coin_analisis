@@ -138,7 +138,7 @@ abstract contract Ownable is Context {
     }
 
 ```
-## Tercer contrato / IERC20 estándar de Ethereum ( openzeppelin)
+### Tercer contrato / IERC20 estándar de Ethereum ( openzeppelin)
 
 El tercer contrato parte otra vez desde Openzeppelin, este caso es la interficie para crear , modificar, y usar un token en la red de ethereum, cómo son las anteriores, parte de el estándar creado por Openzeppelin.
 

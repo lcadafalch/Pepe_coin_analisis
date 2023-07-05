@@ -144,6 +144,7 @@ El tercer contrato parte otra vez desde Openzeppelin, este caso es la interficie
 
 Básicamente hay temas de **transferencia**, cantidad **total** y **prestación** y eventos para la visualización de las ** Transferencias **
 */
+```solidity
 interface IERC20 {
     function totalSupply() external view returns (uint256);
     function balanceOf(address account) external view returns (uint256);
@@ -158,4 +159,4 @@ interface IERC20 {
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
-
+```

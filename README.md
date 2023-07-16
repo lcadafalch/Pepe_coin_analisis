@@ -162,3 +162,28 @@ interface IERC20 {
 ```
 
 ### Cuarto contrato / Iplementación de la interface y metadatos de los ERC20
+
+El código siguente específicamente una interfaz llamada IERC20Metadata. Esta interfaz define una serie de funciones que proporcionan información sobre un token ERC-20 (Ethereum Request for Comment 20).
+
+Las interfaces en Solidity son como contratos incompletos que solo contienen declaraciones de funciones y eventos, sin incluir su implementación. Sirven para establecer una comunicación estandarizada entre diferentes contratos, permitiendo que interactúen correctamente.
+
+En este caso, la interfaz IERC20Metadata hereda de otra interfaz llamada IERC20. Esto significa que IERC20Metadata incluye todas las funciones definidas en IERC20, además de las que se definen en esta interfaz.
+
+A continuación, describiré las funciones que se definen en la interfaz IERC20Metadata:
+
+name() external view returns (string memory): Esta función devuelve el nombre del token ERC-20, representado como una cadena de texto (string).
+
+symbol() external view returns (string memory): Esta función devuelve el símbolo del token ERC-20, también representado como una cadena de texto (string). El símbolo suele ser una abreviatura o código corto que representa el token, como "ETH" para Ether o "BTC" para Bitcoin.
+
+decimals() external view returns (uint8): Esta función devuelve la cantidad de decimales que se utilizan para representar las fracciones del token. Por ejemplo, si decimals devuelve 18, significa que el token tiene 18 decimales y la unidad más pequeña es 1 wei. Si decimals devuelve 8, la unidad más pequeña sería 1 satoshi.
+
+En cuanto al comentario que menciona @openzeppelin/contracts/token/ERC20/ERC20.sol@v4.4.0, indica que esta interfaz es parte de los contratos de OpenZeppelin, una biblioteca de contratos inteligentes desarrollada para facilitar el desarrollo seguro y estandarizado de aplicaciones descentralizadas (DApps) en la red Ethereum.
+
+Cabe destacar que esta es solo una parte de un contrato más grande, y normalmente se utilizará junto con la implementación completa del contrato ERC-20 que contiene las funciones definidas en esta interfaz. Además, el contrato completo de IERC20Metadata también debe heredar la implementación de las funciones de la interfaz IERC20.
+```solidity
+interface IERC20Metadata is IERC20 {
+    function name() external view returns (string memory);
+    function symbol() external view returns (string memory);
+    function decimals() external view returns (uint8);
+}
+```

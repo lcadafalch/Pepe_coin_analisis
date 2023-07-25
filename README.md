@@ -188,8 +188,7 @@ interface IERC20Metadata is IERC20 {
 }
 ```
 ### Quinto contrato // Creación del contrato ERC20
-
-Funciones principales del quinto contrato implementación de los contratos anteriores
+El contrato de a continuación representa una implementación de un ERC-20, el estándar para crear tokens fungíbles en la red de Ethereum.
 ```solidity
 pragma solidity ^0.8.0;
 contract ERC20 is Context, IERC20, IERC20Metadata {

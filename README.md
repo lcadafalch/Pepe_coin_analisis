@@ -191,12 +191,20 @@ interface IERC20Metadata is IERC20 {
 El contrato de a continuación representa una implementación de un ERC-20, el estándar para crear tokens fungíbles en la red de Ethereum.
 ```solidity
 pragma solidity ^0.8.0;
+
 contract ERC20 is Context, IERC20, IERC20Metadata {
     mapping(address => uint256) private _balances;
     mapping(address => mapping(address => uint256)) private _allowances;
     uint256 private _totalSupply;
     string private _name;
     string private _symbol;
+```
+Las variables de estado son:
+**_balances** mapping que controla la cantidad de de tokens de cada cartera.
+**_allowances** mapping que visualiza la cantidad de tokens gastados por cada cartera.
+
+
+``` solidity
     constructor(string memory name_, string memory symbol_) {
         _name = name_;
         _symbol = symbol_;

@@ -200,7 +200,9 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     string private _symbol;
 ```
 Las variables de estado son:
+<br/>
 **_balances** mapping que controla la cantidad de de tokens de cada cartera.
+<br/>
 **_allowances** mapping que visualiza la cantidad de tokens gastados por cada cartera.
 
 

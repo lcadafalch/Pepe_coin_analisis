@@ -199,18 +199,26 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     string private _name;
     string private _symbol;
 ```
-Las variables de estado son:
+Las variables principales son:
 <br/>
 **_balances** mapping que controla la cantidad de de tokens de cada cartera.
 <br/>
-**_allowances** mapping que visualiza la cantidad de tokens gastados por cada cartera.
-
+**_allowances** mapping que visualiza la cantidad de tokens gastados por cada cartera usado por la función approve y transferForm
+<br/>
+**_totalSupply** uint que representa el total de tokens en circulación
+<br/>
+**name** string que representa el nombre del token.
+<br/>
+**_symbol** string que representa el simbolo del token.
 
 ``` solidity
     constructor(string memory name_, string memory symbol_) {
         _name = name_;
         _symbol = symbol_;
     }
+```
+
+```solidity
     function name() public view virtual override returns (string memory) {
         return _name;
     }

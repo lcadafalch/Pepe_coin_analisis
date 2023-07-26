@@ -224,7 +224,7 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
         return _name;
     }
 ```
-name(): Devuelve el nombre del token como una cadena de texto, sólo la string, la palabra reservada view sólo es para visualizar.
+**name():** Devuelve el nombre del token como una cadena de texto, sólo la string, la palabra reservada view sólo es para visualizar.
 
 ```solidity
     function symbol() public view virtual override returns (string memory) {

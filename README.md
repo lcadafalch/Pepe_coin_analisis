@@ -217,7 +217,8 @@ Las variables principales son:
         _symbol = symbol_;
     }
 ```
-
+El constructor se inicializa con el nombre y el símbolo que le asignamos , recordemos que el constructor se ejecuta sólo una vez, cuando se ejecuta el contrato por primera vez.
+ 
 ```solidity
     function name() public view virtual override returns (string memory) {
         return _name;

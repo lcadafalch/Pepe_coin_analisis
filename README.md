@@ -231,33 +231,36 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
         return _symbol;
     }
 ```
-symbol(): Devuelve el símbolo del token como una cadena de texto.
+**symbol():** Devuelve el símbolo del token como una cadena de texto.
 ```solidity
     function decimals() public view virtual override returns (uint8) {
         return 18;
     }
 ```
-decimals(): Devuelve la cantidad de decimales que el token utiliza para su representación. En este caso, siempre devuelve 18, lo que es común en muchos tokens de la red de Ethereum
+**decimals():** Devuelve la cantidad de decimales que el token utiliza para su representación. En este caso, siempre devuelve 18, lo que es común en muchos tokens de la red de Ethereum
 
 ```solidity
     function totalSupply() public view virtual override returns (uint256) {
         return _totalSupply;
     }
 ```
-totalSupply(): Devuelve el total de unidades del token en existencia.
+**totalSupply():** Devuelve el total de unidades del token en existencia.
 
 ```solidity
     function balanceOf(address account) public view virtual override returns (uint256) {
         return _balances[account];
     }
 ```
-balanceOf(address account): Devuelve el saldo del token del titular de la cuenta especificada.
+**balanceOf(address account):** Devuelve el saldo del token del titular de la cuenta especificada.
+
 ```solidity
     function transfer(address recipient, uint256 amount) public virtual override returns (bool) {
         _transfer(_msgSender(), recipient, amount);
         return true;
     }
-
+```
+**transfer(address recipient, uint256 amount):** Transfiere una cantidad específica del token desde la cuenta del remitente (la cuenta que llama a la función) a la cuenta del destinatario especificada.
+```solidity
     function allowance(address owner, address spender) public view virtual override returns (uint256) {
         return _allowances[owner][spender];
     }

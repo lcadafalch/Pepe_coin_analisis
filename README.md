@@ -264,10 +264,17 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
     function allowance(address owner, address spender) public view virtual override returns (uint256) {
         return _allowances[owner][spender];
     }
+```
+**allowance(address owner, address spender):** Devuelve la cantidad de tokens que el propietario ha autorizado a un gastador (una dirección) para gastar en su nombre.
+```solidity
     function approve(address spender, uint256 amount) public virtual override returns (bool) {
         _approve(_msgSender(), spender, amount);
         return true;
     }
+ ```
+    **approve(address spender, uint256 amount):** Permite que el gastador (una dirección) gaste una cantidad específica de tokens en nombre del propietario de la cuenta que llama a la función.
+ ```solidity
+    
     function transferFrom(
         address sender,
         address recipient,

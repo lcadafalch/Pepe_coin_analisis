@@ -272,7 +272,7 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
         return true;
     }
  ```
-    **approve(address spender, uint256 amount):** Permite que el gastador (una dirección) gaste una cantidad específica de tokens en nombre del propietario de la cuenta que llama a la función.
+ **approve(address spender, uint256 amount):** Permite que el gastador (una dirección) gaste una cantidad específica de tokens en nombre del propietario de la cuenta que llama a la función.
  ```solidity
     
     function transferFrom(
@@ -290,6 +290,10 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
 
         return true;
     }
+```
+. Esta función permite a un tercero (llamado "aprobado") transferir tokens en nombre de otra cuenta, siempre que la cuenta emisora haya otorgado previamente la correspondiente asignación de tokens.
+
+```solidity
     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {
         _approve(_msgSender(), spender, _allowances[_msgSender()][spender] + addedValue);
         return true;

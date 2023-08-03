@@ -298,6 +298,8 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
         _approve(_msgSender(), spender, _allowances[_msgSender()][spender] + addedValue);
         return true;
     }
+```
+```solidity
     function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {
         uint256 currentAllowance = _allowances[_msgSender()][spender];
         require(currentAllowance >= subtractedValue, "ERC20: decreased allowance below zero");
@@ -306,6 +308,8 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
         }
 
         return true;
+```
+``` solidity
     }
     function _transfer(
         address sender,
@@ -355,6 +359,8 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
 
         _afterTokenTransfer(account, address(0), amount);
     }
+```
+```solidity
     function _approve(
         address owner,
         address spender,
@@ -366,6 +372,7 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
         _allowances[owner][spender] = amount;
         emit Approval(owner, spender, amount);
     }
+
     function _beforeTokenTransfer(
         address from,
         address to,

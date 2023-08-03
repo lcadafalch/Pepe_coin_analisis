@@ -332,6 +332,8 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
 
         _afterTokenTransfer(sender, recipient, amount);
     }
+```
+```solidity
     function _mint(address account, uint256 amount) internal virtual {
         require(account != address(0), "ERC20: mint to the zero address");
 
@@ -372,6 +374,8 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
         _allowances[owner][spender] = amount;
         emit Approval(owner, spender, amount);
     }
+```
+```solidity
 
     function _beforeTokenTransfer(
         address from,

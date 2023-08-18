@@ -299,6 +299,20 @@ El constructor se inicializa con el nombre y el símbolo que le asignamos , reco
         return true;
     }
 ```
+function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {
+Definición de una función llamada increaseAllowance que toma dos argumentos: spender, que es una dirección Ethereum, y addedValue, que es un valor numérico sin signo de 256 bits.
+public virtual indica que la función es visible y puede ser sobreescrita por las clases hijas.
+returns (bool) indica que la función devuelve un valor booleano (true o false).
+_approve(_msgSender(), spender, _allowances[_msgSender()][spender] + addedValue);
+
+Se llama a una función interna _approve con tres argumentos:
+_msgSender(): La dirección de la cuenta que llama a la función.
+spender: La dirección de la cuenta que se le está aumentando la asignación.
+_allowances[_msgSender()][spender] + addedValue: La nueva asignación es la asignación actual más el valor agregado.
+return true;
+
+La función devuelve true para indicar que la operación se realizó exitosamente.
+En resumen, esta función se encarga de aumentar la asignación permitida para una dirección específica que puede gastar desde una cuenta en particular.
 ```solidity
     function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {
         uint256 currentAllowance = _allowances[_msgSender()][spender];
